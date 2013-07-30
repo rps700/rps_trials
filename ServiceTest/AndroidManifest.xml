@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.psr.trials"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="17" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.psr.trials.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!--
+        Service is local service as if it runs in the same process as the parent application else. 
+        You can declare the service to run in it's process if declared with : it's private to the current application
+        Running a service in its own process gives it its own memory address space and a garbage collector of the virtual machine in this process does not affect the application process.
+        Application rarely need to run a service in its own process. Running a services in its own process make the communication of the other Android components and the service harder to implement.
+        You will have to implement inter process communication. 
+        -->
+        <service
+            android:name="MyService"
+            android:description="@string/app_name"
+            android:icon="@drawable/ic_launcher"
+            android:label="Poonam Service Test" >
+        </service>
+    </application>
+
+</manifest>
